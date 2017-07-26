@@ -193,7 +193,6 @@
 #pragma mark - 相关处理
 - (NSString *)currentTimeStamp
 {
-    return @"1501044346";
     NSString *timeSp = [[NSString alloc]initWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
     return timeSp;
 }

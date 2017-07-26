@@ -145,7 +145,7 @@ Pod::Spec.new do |s|
 	end
 	
 	s.subspec 'ThirdSdk' do |st|
-                st.source_files = "AMDNetworkService/SDK/*.{h,m}","AMDNetworkService/Category/*.{h,m}"  
+                st.source_files = "AMDNetworkService/SDK/*/*.{h,m,c}","AMDNetworkService/Category/*.{h,m}"  
 		st.dependency 'AFNetworking' ,'~>3.1.0'
         end
 
