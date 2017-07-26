@@ -22,3 +22,4 @@ FOUNDATION_EXPORT const unsigned char AMDNetworkServiceVersionString[];
 #import <AMDNetworkService/NSApi.h>
 #import <AMDNetworkService/NSConstVar.h>
 #import <AMDNetworkService/NSDNSPod.h>
+#import <AMDNetworkService/NSLoadingView.h>

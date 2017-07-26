@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AMDNetworkService"
-  s.version      = "1.0.0"
+  s.version      = "1.1.0"
   s.summary      = "the network request in the app "
 
   # This description is used to generate tags and improve search results.
@@ -136,8 +136,13 @@ Pod::Spec.new do |s|
 	s.subspec 'Core' do |st|
                 st.source_files = "AMDNetworkService/Request/*.{h,m}"
 		st.dependency "AMDNetworkService/Private"
+		st.dependency "AMDNetworkService/UIKit"
 	end
 
+	s.subspec 'UIKit' do |st|
+                st.source_files = "AMDNetworkService/View/*.{h,m}"
+        end
+	
 	#视图类	
 	s.subspec 'Private' do |st|
 		st.source_files = "AMDNetworkService/Private/*.{h,m}"

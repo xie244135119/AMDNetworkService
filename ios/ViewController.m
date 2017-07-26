@@ -38,7 +38,10 @@
     [NSApi registerPrismKey:@"msubxgez" secret:@"3dhx34sm7ryr6x22lvsj"];
     [NSApi registerUserAgent:@{@"wdwd": @"1.0.0"}];
     
-    NSHttpRequest *request = [[NSHttpRequest alloc]init];
+    NSHttpConfiguration *configuration = [[NSHttpConfiguration alloc]init];
+    configuration.animated = YES;
+    configuration.animateView = self.view;
+    NSHttpRequest *request = [[NSHttpRequest alloc]initWithConfiguration:configuration];
     request.type = NSRequestGET;
 //    request.requestParams = @{@"data":@""};
     request.urlPath = @"/api/nova-shop/admin/shop/register-phone/verify-code";

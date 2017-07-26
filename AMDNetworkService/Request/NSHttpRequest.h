@@ -7,7 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "NSConstVar.h"
+
+
+@interface NSHttpConfiguration : NSObject
+
+#pragma mark - 动画加载
+// 是否需要动画
+@property(nonatomic) BOOL animated;
+// 动画加载视图
+@property(nonatomic, strong) UIView *animateView;
+// 当前调用控制器
+@property(nonatomic, weak) UIViewController *controller;
+@end
+
 
 
 @interface NSHttpRequest : NSObject
@@ -25,17 +39,23 @@
 
 
 
-
 #pragma mark - 自定义域名相关
 // 例如 https://openapi.wdwd.com 为nil时使用默认统一域名
 @property(nonatomic, copy) NSString *customHost;
 
 
+/**
+ 初始化配置项
+
+ @param configuration 配置项
+ @return 实例
+ */
+- (id)initWithConfiguration:(NSHttpConfiguration *)configuration;
+
+
+
 
 @end
-
-
-
 
 
 

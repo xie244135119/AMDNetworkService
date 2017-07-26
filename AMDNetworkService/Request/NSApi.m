@@ -12,6 +12,7 @@
 #import "NSDNSPod.h"
 #import "NSPrivateTool.h"
 #import "PrismIOS.h"
+#import <objc/objc.h>
 
 
 // 固定的请求地址
@@ -57,6 +58,11 @@ static NSURL *_hostURL = nil;
 //
 - (BOOL)sendReq:(NSHttpRequest*)req
 {
+    // 加载动画
+    #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    [req performSelector:NSSelectorFromString(@"start") withObject:nil];
+    
+    
     // 处理完成事件
     __weak typeof(self) weakself = self;
     __block void (^completion)(id _Nonnull responseObject, NSError * _Nullable error)
@@ -74,6 +80,10 @@ static NSURL *_hostURL = nil;
         }
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            // 关闭动画
+            #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+            [req performSelector:NSSelectorFromString(@"end") withObject:nil];
+            
             if (req.completion) {
                 req.completion(responseObject, aerror);
             }
