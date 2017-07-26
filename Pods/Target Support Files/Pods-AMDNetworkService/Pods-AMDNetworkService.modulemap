@@ -1,0 +1,6 @@
+framework module Pods_AMDNetworkService {
+  umbrella header "Pods-AMDNetworkService-umbrella.h"
+
+  export *
+  module * { export * }
+}

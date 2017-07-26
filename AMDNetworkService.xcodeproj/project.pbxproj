@@ -1,0 +1,701 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4013F2CB2B3E0AF6016A136D /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778C0597A3DBD91BF448516A /* Pods_ios.framework */; };
+		B9776F7F44F5E207D2BF4A0B /* Pods_AMDNetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1782270685E493127B0256 /* Pods_AMDNetworkService.framework */; };
+		CB5010091F26D7D500C6E943 /* AMDNetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5010071F26D7D500C6E943 /* AMDNetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CB5010171F26D8C000C6E943 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010161F26D8C000C6E943 /* main.m */; };
+		CB50101A1F26D8C000C6E943 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010191F26D8C000C6E943 /* AppDelegate.m */; };
+		CB50101D1F26D8C000C6E943 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50101C1F26D8C000C6E943 /* ViewController.m */; };
+		CB5010201F26D8C000C6E943 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB50101E1F26D8C000C6E943 /* Main.storyboard */; };
+		CB5010221F26D8C000C6E943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB5010211F26D8C000C6E943 /* Assets.xcassets */; };
+		CB5010251F26D8C000C6E943 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB5010231F26D8C000C6E943 /* LaunchScreen.storyboard */; };
+		CB50103D1F26E8CB00C6E943 /* NSConstVar.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5010381F26E8CB00C6E943 /* NSConstVar.h */; };
+		CB50103E1F26E8CB00C6E943 /* NSConstVar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010391F26E8CB00C6E943 /* NSConstVar.m */; };
+		CB50103F1F26E8CB00C6E943 /* NSConstVar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010391F26E8CB00C6E943 /* NSConstVar.m */; };
+		CB5010401F26E8CB00C6E943 /* NSHttpRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50103B1F26E8CB00C6E943 /* NSHttpRequest.h */; };
+		CB5010411F26E8CB00C6E943 /* NSHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50103C1F26E8CB00C6E943 /* NSHttpRequest.m */; };
+		CB5010421F26E8CB00C6E943 /* NSHttpRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50103C1F26E8CB00C6E943 /* NSHttpRequest.m */; };
+		CB50104A1F26E92800C6E943 /* README in Resources */ = {isa = PBXBuildFile; fileRef = CB5010491F26E92800C6E943 /* README */; };
+		CB50104B1F26E92800C6E943 /* README in Resources */ = {isa = PBXBuildFile; fileRef = CB5010491F26E92800C6E943 /* README */; };
+		CB5010581F26EC2500C6E943 /* NSDNSPod.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5010561F26EC2500C6E943 /* NSDNSPod.h */; };
+		CB5010591F26EC2500C6E943 /* NSDNSPod.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010571F26EC2500C6E943 /* NSDNSPod.m */; };
+		CB50105A1F26EC2500C6E943 /* NSDNSPod.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010571F26EC2500C6E943 /* NSDNSPod.m */; };
+		CB5010681F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5010661F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.h */; };
+		CB5010691F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010671F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m */; };
+		CB50106A1F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5010671F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m */; };
+		CB50106D1F2707E800C6E943 /* NSPrivateTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50106B1F2707E800C6E943 /* NSPrivateTool.h */; };
+		CB50106E1F2707E800C6E943 /* NSPrivateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50106C1F2707E800C6E943 /* NSPrivateTool.m */; };
+		CB50106F1F2707E800C6E943 /* NSPrivateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50106C1F2707E800C6E943 /* NSPrivateTool.m */; };
+		CB50107F1F27083400C6E943 /* XQIPAdress.c in Sources */ = {isa = PBXBuildFile; fileRef = CB5010781F27083400C6E943 /* XQIPAdress.c */; };
+		CB5010801F27083400C6E943 /* XQIPAdress.c in Sources */ = {isa = PBXBuildFile; fileRef = CB5010781F27083400C6E943 /* XQIPAdress.c */; };
+		CB5010811F27083400C6E943 /* XQIPAdress.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5010791F27083400C6E943 /* XQIPAdress.h */; };
+		CB5010821F27083400C6E943 /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50107B1F27083400C6E943 /* Constants.h */; };
+		CB5010841F27083400C6E943 /* PrismIOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50107D1F27083400C6E943 /* PrismIOS.h */; };
+		CB5010851F27083400C6E943 /* PrismIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50107E1F27083400C6E943 /* PrismIOS.m */; };
+		CB5010861F27083400C6E943 /* PrismIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50107E1F27083400C6E943 /* PrismIOS.m */; };
+		CB50108D1F272EA400C6E943 /* NSApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50108B1F272EA400C6E943 /* NSApi.h */; };
+		CB50108E1F272EA400C6E943 /* NSApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50108C1F272EA400C6E943 /* NSApi.m */; };
+		CB50108F1F272EA400C6E943 /* NSApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50108C1F272EA400C6E943 /* NSApi.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		055B23F8A10611C8F9A5F1B6 /* Pods-AMDNetworkService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDNetworkService.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AMDNetworkService/Pods-AMDNetworkService.debug.xcconfig"; sourceTree = "<group>"; };
+		12DFED9EAFE2D0B8EC9DAAD1 /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		778C0597A3DBD91BF448516A /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		967D979457023C5B8C445948 /* Pods-AMDNetworkService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AMDNetworkService.release.xcconfig"; path = "Pods/Target Support Files/Pods-AMDNetworkService/Pods-AMDNetworkService.release.xcconfig"; sourceTree = "<group>"; };
+		9B1782270685E493127B0256 /* Pods_AMDNetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AMDNetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5010041F26D7D500C6E943 /* AMDNetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AMDNetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5010071F26D7D500C6E943 /* AMDNetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AMDNetworkService.h; sourceTree = "<group>"; };
+		CB5010081F26D7D500C6E943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5010131F26D8C000C6E943 /* ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB5010161F26D8C000C6E943 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CB5010181F26D8C000C6E943 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CB5010191F26D8C000C6E943 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CB50101B1F26D8C000C6E943 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CB50101C1F26D8C000C6E943 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CB50101F1F26D8C000C6E943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CB5010211F26D8C000C6E943 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CB5010241F26D8C000C6E943 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CB5010261F26D8C000C6E943 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB5010381F26E8CB00C6E943 /* NSConstVar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSConstVar.h; sourceTree = "<group>"; };
+		CB5010391F26E8CB00C6E943 /* NSConstVar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSConstVar.m; sourceTree = "<group>"; };
+		CB50103B1F26E8CB00C6E943 /* NSHttpRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSHttpRequest.h; sourceTree = "<group>"; };
+		CB50103C1F26E8CB00C6E943 /* NSHttpRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSHttpRequest.m; sourceTree = "<group>"; };
+		CB5010491F26E92800C6E943 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		CB5010561F26EC2500C6E943 /* NSDNSPod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDNSPod.h; sourceTree = "<group>"; };
+		CB5010571F26EC2500C6E943 /* NSDNSPod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDNSPod.m; sourceTree = "<group>"; };
+		CB5010661F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPSessionManager+NSHttpCategory.h"; sourceTree = "<group>"; };
+		CB5010671F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+NSHttpCategory.m"; sourceTree = "<group>"; };
+		CB50106B1F2707E800C6E943 /* NSPrivateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPrivateTool.h; sourceTree = "<group>"; };
+		CB50106C1F2707E800C6E943 /* NSPrivateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPrivateTool.m; sourceTree = "<group>"; };
+		CB5010781F27083400C6E943 /* XQIPAdress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XQIPAdress.c; sourceTree = "<group>"; };
+		CB5010791F27083400C6E943 /* XQIPAdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIPAdress.h; sourceTree = "<group>"; };
+		CB50107B1F27083400C6E943 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CB50107D1F27083400C6E943 /* PrismIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrismIOS.h; sourceTree = "<group>"; };
+		CB50107E1F27083400C6E943 /* PrismIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrismIOS.m; sourceTree = "<group>"; };
+		CB50108A1F270F6C00C6E943 /* PrismStatusDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrismStatusDefine.h; sourceTree = "<group>"; };
+		CB50108B1F272EA400C6E943 /* NSApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApi.h; sourceTree = "<group>"; };
+		CB50108C1F272EA400C6E943 /* NSApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApi.m; sourceTree = "<group>"; };
+		E19D623AACE1B8995C212A39 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB5010001F26D7D500C6E943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B9776F7F44F5E207D2BF4A0B /* Pods_AMDNetworkService.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5010101F26D8C000C6E943 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4013F2CB2B3E0AF6016A136D /* Pods_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		605208450FAE99C62FB1FF36 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				055B23F8A10611C8F9A5F1B6 /* Pods-AMDNetworkService.debug.xcconfig */,
+				967D979457023C5B8C445948 /* Pods-AMDNetworkService.release.xcconfig */,
+				12DFED9EAFE2D0B8EC9DAAD1 /* Pods-ios.debug.xcconfig */,
+				E19D623AACE1B8995C212A39 /* Pods-ios.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C4E60CEA7A28A43432FBC3FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B1782270685E493127B0256 /* Pods_AMDNetworkService.framework */,
+				778C0597A3DBD91BF448516A /* Pods_ios.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CB500FFA1F26D7D500C6E943 = {
+			isa = PBXGroup;
+			children = (
+				CB5010061F26D7D500C6E943 /* AMDNetworkService */,
+				CB5010141F26D8C000C6E943 /* ios */,
+				CB5010051F26D7D500C6E943 /* Products */,
+				605208450FAE99C62FB1FF36 /* Pods */,
+				C4E60CEA7A28A43432FBC3FB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CB5010051F26D7D500C6E943 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010041F26D7D500C6E943 /* AMDNetworkService.framework */,
+				CB5010131F26D8C000C6E943 /* ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB5010061F26D7D500C6E943 /* AMDNetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010761F27083400C6E943 /* SDK */,
+				CB5010651F26F65F00C6E943 /* Category */,
+				CB5010371F26E8CB00C6E943 /* Private */,
+				CB50103A1F26E8CB00C6E943 /* Request */,
+				CB5010071F26D7D500C6E943 /* AMDNetworkService.h */,
+				CB5010081F26D7D500C6E943 /* Info.plist */,
+				CB5010491F26E92800C6E943 /* README */,
+			);
+			path = AMDNetworkService;
+			sourceTree = "<group>";
+		};
+		CB5010141F26D8C000C6E943 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010181F26D8C000C6E943 /* AppDelegate.h */,
+				CB5010191F26D8C000C6E943 /* AppDelegate.m */,
+				CB50101B1F26D8C000C6E943 /* ViewController.h */,
+				CB50101C1F26D8C000C6E943 /* ViewController.m */,
+				CB50101E1F26D8C000C6E943 /* Main.storyboard */,
+				CB5010211F26D8C000C6E943 /* Assets.xcassets */,
+				CB5010231F26D8C000C6E943 /* LaunchScreen.storyboard */,
+				CB5010261F26D8C000C6E943 /* Info.plist */,
+				CB5010151F26D8C000C6E943 /* Supporting Files */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		CB5010151F26D8C000C6E943 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010161F26D8C000C6E943 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CB5010371F26E8CB00C6E943 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010381F26E8CB00C6E943 /* NSConstVar.h */,
+				CB5010391F26E8CB00C6E943 /* NSConstVar.m */,
+				CB5010561F26EC2500C6E943 /* NSDNSPod.h */,
+				CB5010571F26EC2500C6E943 /* NSDNSPod.m */,
+				CB50106B1F2707E800C6E943 /* NSPrivateTool.h */,
+				CB50106C1F2707E800C6E943 /* NSPrivateTool.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		CB50103A1F26E8CB00C6E943 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CB50103B1F26E8CB00C6E943 /* NSHttpRequest.h */,
+				CB50103C1F26E8CB00C6E943 /* NSHttpRequest.m */,
+				CB50108B1F272EA400C6E943 /* NSApi.h */,
+				CB50108C1F272EA400C6E943 /* NSApi.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CB5010651F26F65F00C6E943 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010661F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.h */,
+				CB5010671F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		CB5010761F27083400C6E943 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010771F27083400C6E943 /* libIPAdress */,
+				CB50107A1F27083400C6E943 /* Prism */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		CB5010771F27083400C6E943 /* libIPAdress */ = {
+			isa = PBXGroup;
+			children = (
+				CB5010781F27083400C6E943 /* XQIPAdress.c */,
+				CB5010791F27083400C6E943 /* XQIPAdress.h */,
+			);
+			path = libIPAdress;
+			sourceTree = "<group>";
+		};
+		CB50107A1F27083400C6E943 /* Prism */ = {
+			isa = PBXGroup;
+			children = (
+				CB50107B1F27083400C6E943 /* Constants.h */,
+				CB50107D1F27083400C6E943 /* PrismIOS.h */,
+				CB50107E1F27083400C6E943 /* PrismIOS.m */,
+				CB50108A1F270F6C00C6E943 /* PrismStatusDefine.h */,
+			);
+			path = Prism;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CB5010011F26D7D500C6E943 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB50108D1F272EA400C6E943 /* NSApi.h in Headers */,
+				CB5010581F26EC2500C6E943 /* NSDNSPod.h in Headers */,
+				CB5010091F26D7D500C6E943 /* AMDNetworkService.h in Headers */,
+				CB5010811F27083400C6E943 /* XQIPAdress.h in Headers */,
+				CB5010401F26E8CB00C6E943 /* NSHttpRequest.h in Headers */,
+				CB5010681F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.h in Headers */,
+				CB5010841F27083400C6E943 /* PrismIOS.h in Headers */,
+				CB50103D1F26E8CB00C6E943 /* NSConstVar.h in Headers */,
+				CB5010821F27083400C6E943 /* Constants.h in Headers */,
+				CB50106D1F2707E800C6E943 /* NSPrivateTool.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CB5010031F26D7D500C6E943 /* AMDNetworkService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB50100C1F26D7D500C6E943 /* Build configuration list for PBXNativeTarget "AMDNetworkService" */;
+			buildPhases = (
+				985563FFB0D3BDB42FDA47CD /* [CP] Check Pods Manifest.lock */,
+				CB500FFF1F26D7D500C6E943 /* Sources */,
+				CB5010001F26D7D500C6E943 /* Frameworks */,
+				CB5010011F26D7D500C6E943 /* Headers */,
+				CB5010021F26D7D500C6E943 /* Resources */,
+				44C4681C87F3C86AC3B3D696 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AMDNetworkService;
+			productName = AMDNetworkService;
+			productReference = CB5010041F26D7D500C6E943 /* AMDNetworkService.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB5010121F26D8C000C6E943 /* ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CB5010291F26D8C000C6E943 /* Build configuration list for PBXNativeTarget "ios" */;
+			buildPhases = (
+				15145B56B62269B096E5C9D7 /* [CP] Check Pods Manifest.lock */,
+				CB50100F1F26D8C000C6E943 /* Sources */,
+				CB5010101F26D8C000C6E943 /* Frameworks */,
+				CB5010111F26D8C000C6E943 /* Resources */,
+				811FDEA46E6CDF62A4B55559 /* [CP] Embed Pods Frameworks */,
+				A662FF81DD62C6722332DF42 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios;
+			productName = ios;
+			productReference = CB5010131F26D8C000C6E943 /* ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CB500FFB1F26D7D500C6E943 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = SunSet;
+				TargetAttributes = {
+					CB5010031F26D7D500C6E943 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					CB5010121F26D8C000C6E943 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = CB500FFE1F26D7D500C6E943 /* Build configuration list for PBXProject "AMDNetworkService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CB500FFA1F26D7D500C6E943;
+			productRefGroup = CB5010051F26D7D500C6E943 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB5010031F26D7D500C6E943 /* AMDNetworkService */,
+				CB5010121F26D8C000C6E943 /* ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CB5010021F26D7D500C6E943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB50104A1F26E92800C6E943 /* README in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB5010111F26D8C000C6E943 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB50104B1F26E92800C6E943 /* README in Resources */,
+				CB5010251F26D8C000C6E943 /* LaunchScreen.storyboard in Resources */,
+				CB5010221F26D8C000C6E943 /* Assets.xcassets in Resources */,
+				CB5010201F26D8C000C6E943 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15145B56B62269B096E5C9D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44C4681C87F3C86AC3B3D696 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AMDNetworkService/Pods-AMDNetworkService-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		811FDEA46E6CDF62A4B55559 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		985563FFB0D3BDB42FDA47CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A662FF81DD62C6722332DF42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CB500FFF1F26D7D500C6E943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB5010411F26E8CB00C6E943 /* NSHttpRequest.m in Sources */,
+				CB5010851F27083400C6E943 /* PrismIOS.m in Sources */,
+				CB50103E1F26E8CB00C6E943 /* NSConstVar.m in Sources */,
+				CB50106E1F2707E800C6E943 /* NSPrivateTool.m in Sources */,
+				CB50107F1F27083400C6E943 /* XQIPAdress.c in Sources */,
+				CB50108E1F272EA400C6E943 /* NSApi.m in Sources */,
+				CB5010591F26EC2500C6E943 /* NSDNSPod.m in Sources */,
+				CB5010691F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB50100F1F26D8C000C6E943 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB50106A1F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m in Sources */,
+				CB5010861F27083400C6E943 /* PrismIOS.m in Sources */,
+				CB5010421F26E8CB00C6E943 /* NSHttpRequest.m in Sources */,
+				CB50108F1F272EA400C6E943 /* NSApi.m in Sources */,
+				CB50105A1F26EC2500C6E943 /* NSDNSPod.m in Sources */,
+				CB5010801F27083400C6E943 /* XQIPAdress.c in Sources */,
+				CB50103F1F26E8CB00C6E943 /* NSConstVar.m in Sources */,
+				CB50101D1F26D8C000C6E943 /* ViewController.m in Sources */,
+				CB50101A1F26D8C000C6E943 /* AppDelegate.m in Sources */,
+				CB5010171F26D8C000C6E943 /* main.m in Sources */,
+				CB50106F1F2707E800C6E943 /* NSPrivateTool.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CB50101E1F26D8C000C6E943 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB50101F1F26D8C000C6E943 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CB5010231F26D8C000C6E943 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB5010241F26D8C000C6E943 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CB50100A1F26D7D500C6E943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CB50100B1F26D7D500C6E943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CB50100D1F26D7D500C6E943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 055B23F8A10611C8F9A5F1B6 /* Pods-AMDNetworkService.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AMDNetworkService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.AMDNetworkService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		CB50100E1F26D7D500C6E943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 967D979457023C5B8C445948 /* Pods-AMDNetworkService.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = AMDNetworkService/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.AMDNetworkService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		CB5010271F26D8C000C6E943 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12DFED9EAFE2D0B8EC9DAAD1 /* Pods-ios.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CB5010281F26D8C000C6E943 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E19D623AACE1B8995C212A39 /* Pods-ios.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CB500FFE1F26D7D500C6E943 /* Build configuration list for PBXProject "AMDNetworkService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB50100A1F26D7D500C6E943 /* Debug */,
+				CB50100B1F26D7D500C6E943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB50100C1F26D7D500C6E943 /* Build configuration list for PBXNativeTarget "AMDNetworkService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB50100D1F26D7D500C6E943 /* Debug */,
+				CB50100E1F26D7D500C6E943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB5010291F26D8C000C6E943 /* Build configuration list for PBXNativeTarget "ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CB5010271F26D8C000C6E943 /* Debug */,
+				CB5010281F26D8C000C6E943 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CB500FFB1F26D7D500C6E943 /* Project object */;
+}
