@@ -11,12 +11,13 @@
 
 @interface NSHttpRequest()
 {
-    NSHttpConfiguration *_configuration;        //配置项
+//    NSHttpConfiguration *_configuration;        //配置项
     __weak NSLoadingView *_loadingView;        //加载视图
 }
 @end
 
 @implementation NSHttpRequest
+@synthesize configuration = _configuration;
 
 
 - (void)dealloc

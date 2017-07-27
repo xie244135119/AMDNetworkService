@@ -26,6 +26,8 @@
 
 @interface NSHttpRequest : NSObject
 
+// 基本配置
+@property(nonatomic, strong, readonly) NSHttpConfiguration *configuration;
 
 #pragma mark - V1.0方案
 // 请求类型
