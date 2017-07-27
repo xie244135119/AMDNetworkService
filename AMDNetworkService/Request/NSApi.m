@@ -182,7 +182,7 @@ static NSURL *_hostURL = nil;
 - (NSDictionary *)_completeParamsWithReq:(NSHttpRequest *)req
 {
     // 常规的参数 + 签名需要携带的参数 + 自定义的参数
-    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
+//    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     // 签名的参数
     NSDictionary *signparam = nil;
     PrismIOS *_prism = self.prismIOS;
@@ -192,8 +192,8 @@ static NSURL *_hostURL = nil;
     else {
         signparam = [_prism assembleParams:req.requestParams headers:[_prism headers] urlPath:req.urlPath httpRequestType:req.type];
     }
-    [params addEntriesFromDictionary:signparam];
-    return params;
+//    [params addEntriesFromDictionary:signparam];
+    return [self _buildParamsWithDict:signparam];
 }
 
 
@@ -372,6 +372,23 @@ static NSURL *_hostURL = nil;
             break;
     }
     return error;
+}
+
+
+#pragma mark - private api
+// af不支持二级参数 需要内部处理
+- (NSDictionary *)_buildParamsWithDict:(NSDictionary *)dict
+{
+    NSMutableDictionary *params = dict.mutableCopy;
+    // 并发处理
+    [params enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[NSDictionary class]] || [obj isKindOfClass:[NSArray class]]) {
+            NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:nil];
+            NSString *jsonstr = [[NSString alloc]initWithData:data encoding:4];
+            [params setObject:jsonstr forKey:key];
+        }
+    }];
+    return params;
 }
 
 
