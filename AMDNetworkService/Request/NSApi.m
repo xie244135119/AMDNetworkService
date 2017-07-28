@@ -186,14 +186,14 @@ static NSURL *_hostURL = nil;
     // 签名的参数
     NSDictionary *signparam = nil;
     PrismIOS *_prism = self.prismIOS;
+    NSDictionary *jsonparams = [self _buildParamsWithDict:req.requestParams];
     if ([_hostURL.scheme isEqualToString:@"https"]) {
-        signparam = [_prism assembleGetParams:req.requestParams];
+        signparam = [_prism assembleGetParams:jsonparams];
     }
     else {
-        signparam = [_prism assembleParams:req.requestParams headers:[_prism headers] urlPath:req.urlPath httpRequestType:req.type];
+        signparam = [_prism assembleParams:jsonparams headers:[_prism headers] urlPath:req.urlPath httpRequestType:req.type];
     }
-//    [params addEntriesFromDictionary:signparam];
-    return [self _buildParamsWithDict:signparam];
+    return signparam;
 }
 
 
@@ -383,7 +383,7 @@ static NSURL *_hostURL = nil;
     // 并发处理
     [params enumerateKeysAndObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([obj isKindOfClass:[NSDictionary class]] || [obj isKindOfClass:[NSArray class]]) {
-            NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:nil];
+            NSData *data = [NSJSONSerialization dataWithJSONObject:obj options:kNilOptions error:nil];
             NSString *jsonstr = [[NSString alloc]initWithData:data encoding:4];
             [params setObject:jsonstr forKey:key];
         }
