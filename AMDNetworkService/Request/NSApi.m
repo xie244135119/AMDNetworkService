@@ -11,7 +11,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "NSDNSPod.h"
 #import "NSPrivateTool.h"
-#import "PrismIOS.h"
+#import "Prism_IOS.h"
 #import <objc/objc.h>
 
 
@@ -29,7 +29,7 @@ static NSURL *_hostURL = nil;
 // 请求类
 @property(nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
  // prism签名类
-@property(nonatomic, strong) PrismIOS *prismIOS;
+@property(nonatomic, strong) Prism_IOS *prismIOS;
 @end
 
 
@@ -123,7 +123,7 @@ static NSURL *_hostURL = nil;
 + (void)registerPrismKey:(NSString *)appKey
                 secret:(NSString *)appSecret
 {
-    PrismIOS *prism = [NSApi shareInstance].prismIOS;
+    Prism_IOS *prism = [NSApi shareInstance].prismIOS;
     [prism setValue:appKey forKey:@"appKey"];
     [prism setValue:appSecret forKey:@"appSecret"];
 }
@@ -185,7 +185,7 @@ static NSURL *_hostURL = nil;
 //    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     // 签名的参数
     NSDictionary *signparam = nil;
-    PrismIOS *_prism = self.prismIOS;
+    Prism_IOS *_prism = self.prismIOS;
     NSDictionary *jsonparams = [self _buildParamsWithDict:req.requestParams];
     if ([_hostURL.scheme isEqualToString:@"https"]) {
         signparam = [_prism assembleGetParams:jsonparams];
@@ -209,10 +209,10 @@ static NSURL *_hostURL = nil;
 
 
 // 签名类
-- (PrismIOS *)prismIOS
+- (Prism_IOS *)prismIOS
 {
     if (_prismIOS == nil) {
-        _prismIOS = [[PrismIOS alloc]init];
+        _prismIOS = [[Prism_IOS alloc]init];
     }
     return _prismIOS;
 }

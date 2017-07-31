@@ -6,18 +6,18 @@
 //  Copyright (c) 2014年 SunSet. All rights reserved.
 //
 
-#import "PrismIOS.h"
+#import "Prism_IOS.h"
 #import <CommonCrypto/CommonCrypto.h>
-#import "Constants.h"
+#import "Prism_Constants.h"
 #import <UIKit/UIKit.h>
 
-@interface PrismIOS()
+@interface Prism_IOS()
 
 //@property(nonatomic,copy) NSString *hostIP ;        //主机ip
 
 @end
 
-@implementation PrismIOS
+@implementation Prism_IOS
 @synthesize appKey = _appKey;
 @synthesize appSecret = _appSecret;
 
@@ -64,7 +64,7 @@
         [allParams addEntriesFromDictionary:appParams];
     }
     
-    NSString *sign = [self sign:headers getParams:type==PrismHttpRequestTypeGet||type==PrismHttpRequestTypeDelete?allParams:nil postParams:type==PrismHttpRequestTypePUT||type==PrismHttpRequestTypePost?allParams:nil method:[self requestMethodWithType:type] path:urlpath];
+    NSString *sign = [self sign:headers getParams:type==PrismHttpRequestGet||type==PrismHttpRequestDelete?allParams:nil postParams:type==PrismHttpRequestPUT||type==PrismHttpRequestPost?allParams:nil method:[self requestMethodWithType:type] path:urlpath];
     [allParams setObject:sign forKey:SIGN];
     return allParams;
 }
@@ -201,16 +201,16 @@
 - (NSString *)requestMethodWithType:(NSInteger)type
 {
     switch (type) {
-        case PrismHttpRequestTypeDelete:
+        case PrismHttpRequestDelete:
             return @"DELETE";
             break;
-        case PrismHttpRequestTypePUT:
+        case PrismHttpRequestPUT:
             return @"PUT";
             break;
-        case PrismHttpRequestTypePost:
+        case PrismHttpRequestPost:
             return @"POST";
             break;
-        case PrismHttpRequestTypeGet:
+        case PrismHttpRequestGet:
             return @"GET";
             break;
         default:

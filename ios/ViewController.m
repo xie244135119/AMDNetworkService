@@ -7,9 +7,8 @@
 //
 
 #import "ViewController.h"
-//#import "NSHttpRequest.h"
 #import "NSApi.h"
-#import "PrismIOS.h"
+#import "Prism_IOS.h"
 
 @interface ViewController ()
 
@@ -63,7 +62,7 @@
     NSString *clientid = @"msubxgez";
     NSString *secret = @"3dhx34sm7ryr6x22lvsj";
     NSString *urlpath = @"/nova-shop/admin/shop/register-phone/verify-code";
-    PrismIOS *prism = [[PrismIOS alloc]initWithAppKey:clientid appSecret:secret];
+    Prism_IOS *prism = [[Prism_IOS alloc]initWithAppKey:clientid appSecret:secret];
     NSDictionary *sign = [prism assembleParams:nil headers:nil urlPath:urlpath httpRequestType:1];
     NSLog(@" 签名:%@ ",sign);
     

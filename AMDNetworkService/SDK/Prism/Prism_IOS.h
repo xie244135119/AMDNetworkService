@@ -10,12 +10,12 @@
 #import "PrismStatusDefine.h"
 
 //
-static NSInteger const PrismHttpRequestTypeGet = 1;         //get
-static NSInteger const PrismHttpRequestTypePost = 2;        //post方式
-static NSInteger const PrismHttpRequestTypePUT = 3;         //put方式
-static NSInteger const PrismHttpRequestTypeDelete = 4;      //delete方式
+static NSInteger const PrismHttpRequestGet = 1;         //get
+static NSInteger const PrismHttpRequestPost = 2;        //post方式
+static NSInteger const PrismHttpRequestPUT = 3;         //put方式
+static NSInteger const PrismHttpRequestDelete = 4;      //delete方式
 
-@interface PrismIOS : NSObject
+@interface Prism_IOS : NSObject
 
 //appkey 和 appsecret 可能改变
 @property(nonatomic, copy, readonly) NSString *appKey;        //appkey
