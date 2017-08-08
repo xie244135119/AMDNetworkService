@@ -1,85 +1,34 @@
-st login: Tue Jul 25 09:28:00 on console
-xieqiangdeMacBook-Pro:~ SunSet$ cd /Users/SunSet/Desktop/Modules/AMDNetworkService 
-xieqiangdeMacBook-Pro:AMDNetworkService SunSet$ s
--bash: s: command not found
-xieqiangdeMacBook-Pro:AMDNetworkService SunSet$ ls
-AMDNetworkService		AMDNetworkService.xcodeproj
-xieqiangdeMacBook-Pro:AMDNetworkService SunSet$ cd /Users/SunSet/Desktop/Modules/AMDOrderModule 
-xieqiangdeMacBook-Pro:AMDOrderModule SunSet$ ls
-AMDOrderModule			Podfile
-AMDOrderModule.podspec		Podfile.lock
-AMDOrderModule.xcodeproj	Pods
-AMDOrderModule.xcworkspace	README.md
-LICENSE				ios
-xieqiangdeMacBook-Pro:AMDOrderModule SunSet$ vim .gitignore
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-xieqiangdeMacBook-Pro:AMDOrderModule SunSet$ cd /Users/SunSet/Desktop/Modules/AMDInvoiceModule 
-xieqiangdeMacBook-Pro:AMDInvoiceModule SunSet$ vim .gitignore
-
-
-
-
-
-
-## Obj-C/Swift specific
-*.hmap
-*.ipa
-*.dSYM.zip
-*.dSYM
-
-# CocoaPods
+# Xcode
 #
-# We recommend against adding the Pods directory to your .gitignore. However
-# you should judge for yourself, the pros and cons are mentioned at:
-# https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
-# Pods/
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
-# Carthage
-#
-# Add this line if you want to avoid checking in source code from Carthage dependencies.
-# Carthage/Checkouts
-
-Carthage/Build
-
-# fastlane
-#
-# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
-# screenshots whenever they are needed.
-# For more information about the recommended setup visit:
-# https://docs.fastlane.tools/best-practices/source-control/#source-control
-
-fastlane/report.xml
-fastlane/Preview.html
-fastlane/screenshots
-fastlane/test_output
-
-# Code Injection
-#
-# After new code Injection tools there's a generated folder /iOSInjectionProject
-# https://github.com/johnno1962/injectionforxcode
-
-iOSInjectionProject/
+erdataXcode
+.*
 .DS_Store
+build/
+xcuserdata/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+!default.xcworkspace
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+*.xccheckout
+*.xcuserstate
+.idea/
+Tests/Pods
+Tests/Podfile.lock
+Tests/AFNetworking Tests.xcodeproj/xcshareddata/xcschemes/
+*.Breakpoints_v2.xcbkptlist
 
-
+Podfile.lock
+Pods/
