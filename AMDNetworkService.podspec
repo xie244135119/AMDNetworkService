@@ -1,4 +1,4 @@
-#
+#MDChooseSkuView
 #  Be sure to run `pod spec lint AMDNetworkService.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AMDNetworkService"
-  s.version      = "1.2.3"
+  s.version      = "2.0"
   s.summary      = "the network request in the app "
 
   # This description is used to generate tags and improve search results.
@@ -150,7 +150,7 @@ Pod::Spec.new do |s|
 	end
 	
 	s.subspec 'ThirdSdk' do |st|
-                st.source_files = "AMDNetworkService/SDK/*/*.{h,m,c}","AMDNetworkService/Category/*.{h,m}"  
+                st.source_files = "AMDNetworkService/Category/*.{h,m}"  
 		st.dependency 'AFNetworking' ,'~>3.1.0'
         end
 
