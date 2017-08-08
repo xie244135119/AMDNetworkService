@@ -36,13 +36,6 @@
 		CB50106D1F2707E800C6E943 /* NSPrivateTool.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50106B1F2707E800C6E943 /* NSPrivateTool.h */; };
 		CB50106E1F2707E800C6E943 /* NSPrivateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50106C1F2707E800C6E943 /* NSPrivateTool.m */; };
 		CB50106F1F2707E800C6E943 /* NSPrivateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50106C1F2707E800C6E943 /* NSPrivateTool.m */; };
-		CB50107F1F27083400C6E943 /* XQIPAdress.c in Sources */ = {isa = PBXBuildFile; fileRef = CB5010781F27083400C6E943 /* XQIPAdress.c */; };
-		CB5010801F27083400C6E943 /* XQIPAdress.c in Sources */ = {isa = PBXBuildFile; fileRef = CB5010781F27083400C6E943 /* XQIPAdress.c */; };
-		CB5010811F27083400C6E943 /* XQIPAdress.h in Headers */ = {isa = PBXBuildFile; fileRef = CB5010791F27083400C6E943 /* XQIPAdress.h */; };
-		CB5010821F27083400C6E943 /* Prism_Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50107B1F27083400C6E943 /* Prism_Constants.h */; };
-		CB5010841F27083400C6E943 /* Prism_IOS.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50107D1F27083400C6E943 /* Prism_IOS.h */; };
-		CB5010851F27083400C6E943 /* Prism_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50107E1F27083400C6E943 /* Prism_IOS.m */; };
-		CB5010861F27083400C6E943 /* Prism_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50107E1F27083400C6E943 /* Prism_IOS.m */; };
 		CB50108D1F272EA400C6E943 /* NSApi.h in Headers */ = {isa = PBXBuildFile; fileRef = CB50108B1F272EA400C6E943 /* NSApi.h */; };
 		CB50108E1F272EA400C6E943 /* NSApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50108C1F272EA400C6E943 /* NSApi.m */; };
 		CB50108F1F272EA400C6E943 /* NSApi.m in Sources */ = {isa = PBXBuildFile; fileRef = CB50108C1F272EA400C6E943 /* NSApi.m */; };
@@ -80,12 +73,6 @@
 		CB5010671F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPSessionManager+NSHttpCategory.m"; sourceTree = "<group>"; };
 		CB50106B1F2707E800C6E943 /* NSPrivateTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSPrivateTool.h; sourceTree = "<group>"; };
 		CB50106C1F2707E800C6E943 /* NSPrivateTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSPrivateTool.m; sourceTree = "<group>"; };
-		CB5010781F27083400C6E943 /* XQIPAdress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = XQIPAdress.c; sourceTree = "<group>"; };
-		CB5010791F27083400C6E943 /* XQIPAdress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XQIPAdress.h; sourceTree = "<group>"; };
-		CB50107B1F27083400C6E943 /* Prism_Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prism_Constants.h; sourceTree = "<group>"; };
-		CB50107D1F27083400C6E943 /* Prism_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prism_IOS.h; sourceTree = "<group>"; };
-		CB50107E1F27083400C6E943 /* Prism_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Prism_IOS.m; sourceTree = "<group>"; };
-		CB50108A1F270F6C00C6E943 /* PrismStatusDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrismStatusDefine.h; sourceTree = "<group>"; };
 		CB50108B1F272EA400C6E943 /* NSApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSApi.h; sourceTree = "<group>"; };
 		CB50108C1F272EA400C6E943 /* NSApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSApi.m; sourceTree = "<group>"; };
 		E19D623AACE1B8995C212A39 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				CB4AB0461F288A4E005748DE /* View */,
-				CB5010761F27083400C6E943 /* SDK */,
 				CB5010651F26F65F00C6E943 /* Category */,
 				CB5010371F26E8CB00C6E943 /* Private */,
 				CB50103A1F26E8CB00C6E943 /* Request */,
@@ -232,35 +218,6 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		CB5010761F27083400C6E943 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				CB5010771F27083400C6E943 /* libIPAdress */,
-				CB50107A1F27083400C6E943 /* Prism */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
-		CB5010771F27083400C6E943 /* libIPAdress */ = {
-			isa = PBXGroup;
-			children = (
-				CB5010781F27083400C6E943 /* XQIPAdress.c */,
-				CB5010791F27083400C6E943 /* XQIPAdress.h */,
-			);
-			path = libIPAdress;
-			sourceTree = "<group>";
-		};
-		CB50107A1F27083400C6E943 /* Prism */ = {
-			isa = PBXGroup;
-			children = (
-				CB50107B1F27083400C6E943 /* Prism_Constants.h */,
-				CB50107D1F27083400C6E943 /* Prism_IOS.h */,
-				CB50107E1F27083400C6E943 /* Prism_IOS.m */,
-				CB50108A1F270F6C00C6E943 /* PrismStatusDefine.h */,
-			);
-			path = Prism;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -271,13 +228,10 @@
 				CB50108D1F272EA400C6E943 /* NSApi.h in Headers */,
 				CB5010581F26EC2500C6E943 /* NSDNSPod.h in Headers */,
 				CB5010091F26D7D500C6E943 /* AMDNetworkService.h in Headers */,
-				CB5010811F27083400C6E943 /* XQIPAdress.h in Headers */,
 				CB5010401F26E8CB00C6E943 /* NSHttpRequest.h in Headers */,
 				CB5010681F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.h in Headers */,
 				CB4AB0491F288ACF005748DE /* NSLoadingView.h in Headers */,
-				CB5010841F27083400C6E943 /* Prism_IOS.h in Headers */,
 				CB50103D1F26E8CB00C6E943 /* NSConstVar.h in Headers */,
-				CB5010821F27083400C6E943 /* Prism_Constants.h in Headers */,
 				CB50106D1F2707E800C6E943 /* NSPrivateTool.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -469,10 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB5010411F26E8CB00C6E943 /* NSHttpRequest.m in Sources */,
-				CB5010851F27083400C6E943 /* Prism_IOS.m in Sources */,
 				CB50103E1F26E8CB00C6E943 /* NSConstVar.m in Sources */,
 				CB50106E1F2707E800C6E943 /* NSPrivateTool.m in Sources */,
-				CB50107F1F27083400C6E943 /* XQIPAdress.c in Sources */,
 				CB50108E1F272EA400C6E943 /* NSApi.m in Sources */,
 				CB5010591F26EC2500C6E943 /* NSDNSPod.m in Sources */,
 				CB4AB04A1F288ACF005748DE /* NSLoadingView.m in Sources */,
@@ -485,11 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB50106A1F26F65F00C6E943 /* AFHTTPSessionManager+NSHttpCategory.m in Sources */,
-				CB5010861F27083400C6E943 /* Prism_IOS.m in Sources */,
 				CB5010421F26E8CB00C6E943 /* NSHttpRequest.m in Sources */,
 				CB50108F1F272EA400C6E943 /* NSApi.m in Sources */,
 				CB50105A1F26EC2500C6E943 /* NSDNSPod.m in Sources */,
-				CB5010801F27083400C6E943 /* XQIPAdress.c in Sources */,
 				CB50103F1F26E8CB00C6E943 /* NSConstVar.m in Sources */,
 				CB50101D1F26D8C000C6E943 /* ViewController.m in Sources */,
 				CB50101A1F26D8C000C6E943 /* AppDelegate.m in Sources */,

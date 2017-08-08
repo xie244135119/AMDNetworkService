@@ -31,15 +31,6 @@
 #pragma mark - 类方法仅需注册一次
 
 /**
- 类注册 prism需要的AppKey和AppSecret
- 
- @param appKey prismAppKey
- @param appSecret prismAppKey
- */
-+ (void)registerPrismKey:(NSString *)appKey
-                  secret:(NSString *)appSecret;
-
-/**
  类注册自定UserAgent<只需注册一次>
  
  @param userAgent 用户agent

@@ -11,7 +11,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "NSDNSPod.h"
 #import "NSPrivateTool.h"
-#import "Prism_IOS.h"
 #import <objc/objc.h>
 
 
@@ -28,8 +27,6 @@ static NSURL *_hostURL = nil;
 }
 // 请求类
 @property(nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
- // prism签名类
-@property(nonatomic, strong) Prism_IOS *prismIOS;
 @end
 
 
@@ -39,7 +36,7 @@ static NSURL *_hostURL = nil;
 {
     _dnsPod = nil;
     self.httpSessionManager = nil;
-    self.prismIOS = nil;
+//    self.prismIOS = nil;
 }
 
 
@@ -119,16 +116,6 @@ static NSURL *_hostURL = nil;
     api->_userAgentDict = userAgent;
 }
 
-//
-+ (void)registerPrismKey:(NSString *)appKey
-                secret:(NSString *)appSecret
-{
-    Prism_IOS *prism = [NSApi shareInstance].prismIOS;
-    [prism setValue:appKey forKey:@"appKey"];
-    [prism setValue:appSecret forKey:@"appSecret"];
-}
-
-
 
 #pragma mark - private api
 //
@@ -182,17 +169,8 @@ static NSURL *_hostURL = nil;
 - (NSDictionary *)_completeParamsWithReq:(NSHttpRequest *)req
 {
     // 常规的参数 + 签名需要携带的参数 + 自定义的参数
-//    NSMutableDictionary *params = [[NSMutableDictionary alloc]init];
     // 签名的参数
-    NSDictionary *signparam = nil;
-    Prism_IOS *_prism = self.prismIOS;
-    NSDictionary *jsonparams = [self _buildParamsWithDict:req.requestParams];
-    if ([_hostURL.scheme isEqualToString:@"https"]) {
-        signparam = [_prism assembleGetParams:jsonparams];
-    }
-    else {
-        signparam = [_prism assembleParams:jsonparams headers:[_prism headers] urlPath:req.urlPath httpRequestType:req.type];
-    }
+    NSDictionary *signparam = req.requestParams;
     return signparam;
 }
 
@@ -204,17 +182,6 @@ static NSURL *_hostURL = nil;
     NSString *hoststr = req.customHost?req.customHost:_hostURL.description;
     NSString *ipurl = [[self dnsPod] hostIPWithUrlStr:hoststr];
     return [ipurl stringByAppendingFormat:@"%@",req.urlPath];
-}
-
-
-
-// 签名类
-- (Prism_IOS *)prismIOS
-{
-    if (_prismIOS == nil) {
-        _prismIOS = [[Prism_IOS alloc]init];
-    }
-    return _prismIOS;
 }
 
 
@@ -240,8 +207,16 @@ static NSURL *_hostURL = nil;
         [policy setAllowInvalidCertificates:YES];
         _httpSessionManager.securityPolicy = policy;
         
+        // 设置超时时间 10s
+        _httpSessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        _httpSessionManager.requestSerializer.timeoutInterval = 10.f;
+        
         // 添加header信息
-        [_httpSessionManager.requestSerializer setValue:[self userAgent] forHTTPHeaderField:@"User-Agent"];
+        NSString *ua = [self userAgent];
+        if (ua.length > 0) {
+            [_httpSessionManager.requestSerializer setValue:[self userAgent] forHTTPHeaderField:@"User-Agent"];
+        }
+        
         [_httpSessionManager.requestSerializer setValue:[self _localIP] forHTTPHeaderField:@"X-Forwarded-For"];
     }
     
@@ -250,10 +225,6 @@ static NSURL *_hostURL = nil;
         [_httpSessionManager.requestSerializer setValue:_hostURL.host forHTTPHeaderField:@"Host"];
     }
     
-    // 移除Access token <发生在重新登录过程中>
-    NSDictionary *headers = [self prismIOS].headers;
-    NSString *authorization = headers[@"Authorization"];
-    [_httpSessionManager.requestSerializer setValue:authorization forHTTPHeaderField:@"Authorization"];
     // 加载
     return _httpSessionManager;
 }
@@ -263,8 +234,7 @@ static NSURL *_hostURL = nil;
 - (NSString *)userAgent
 {
     // 设置默认ua
-    NSApi *api = [NSApi shareInstance];
-    NSMutableString *defaultua = [[NSMutableString alloc]initWithString:[api.prismIOS headers][@"User-Agent"]];
+    NSMutableString *defaultua = [[NSMutableString alloc]initWithString:@""];
     NSDictionary *identifier = _userAgentDict;
     if (identifier.allKeys.count > 0) {
         for (NSString *key in identifier.allKeys) {
@@ -286,93 +256,12 @@ static NSURL *_hostURL = nil;
     return _localIP;
 }
 
-
-//#pragma mark - 统一处理请求结果
-// 请求失败
-//- (void)_handleCompletion:(id)responseObject
-//              error:(NSError *)error
-//{
-//    // prism错误提示语
-//    if ([responseObject isKindOfClass:[NSDictionary class]]) {
-//        if ([responseObject[@"result"] isEqualToString:@"error"]) {
-//            NSDictionary *error = responseObject[@"error"];
-//            NSInteger code = [error[@"code"] integerValue];
-//            NSString *errordes = [self prismErrorFromCode:code];
-//            NSError *e = [[NSError alloc]initWithDomain:NSURLErrorDomain code:0 userInfo:@{NSURLErrorFailingURLErrorKey:errordes}];
-//            if (_completion) {
-//                _completion(responseObject, e);
-//            }
-//            return;
-//        }
-//    }
-//    
-//    if (_completion) {
-//        _completion(responseObject, error);
-//    }
-//}
-
-
-
-
-#pragma mark - 统一Prism错误提示语提示
-//
-- (NSString *)prismErrorFromCode:(NSInteger)code
+- (NSURL *)api_hostURL
 {
-    NSString *error = @"未知错误";
-    switch (code) {
-        case PE_LIMIT_OUT:
-            error = @"请求超出限制,请稍后重试";
-            break;
-        case PE_MISS_PARAM:
-            error = @"缺少参数";
-            break;
-        case PE_SIGN_INVALID:
-            error = @"签名错误";
-            break;
-        case PE_CLIENTID_ERROR:
-            error = @"clientid 错误";
-            break;
-        case PE_KEY_EXPIRED:
-            error = @"key 过期";
-            break;
-        case PE_SECRET_INVALID:
-            error = @"secret 错误";
-            break;
-        case PE_APP_INVALID:
-            error = @"app 错误";
-            break;
-        case PE_APP_DISABLED:
-            error = @"app 不可用";
-            break;
-        case PE_SIGNTIME_INVALID:
-            error = @"签名时间错误";
-            break;
-        case PE_SIGNTIME_EXPIRED:
-            error = @"签名时间过期";
-            break;
-        case PE_PERMISSION_INVALID:
-            error = @"app缺少权限调用";
-            break;
-        case PE_TOKEN_REQUIRED:
-            error = @"当前api请求需要token";
-            break;
-        case PE_PASSWORD_INVALID:
-            error = @"用户名或密码错误";
-            break;
-        case PE_APP_NOTEXIST:
-            error = @"app不存在";
-            break;
-        case PE_METHOD_NOTEXIST:
-            error = @"方法不存在";
-            break;
-        case PE_BACKEND_ERROR:
-            error = @"后台错误";
-            break;
-        default:
-            break;
-    }
-    return error;
+    NSAssert(_hostURL != nil, @"请先调用 registerHostUrl 配置请求url");
+    return _hostURL;
 }
+
 
 
 #pragma mark - private api

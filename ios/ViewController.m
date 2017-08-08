@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "NSApi.h"
-#import "Prism_IOS.h"
 
 @interface ViewController ()
 
@@ -20,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     [self test];
-    [self testSign];
+//    [self testSign];
 }
 
 
@@ -34,14 +33,14 @@
 - (void)test
 {
     [NSApi registerHostUrl:[NSURL URLWithString:@"http://openapi.sandbox.wdwd.com"]];
-    [NSApi registerPrismKey:@"msubxgez" secret:@"3dhx34sm7ryr6x22lvsj"];
+//    [NSApi registerPrismKey:@"msubxgez" secret:@"3dhx34sm7ryr6x22lvsj"];
     [NSApi registerUserAgent:@{@"wdwd": @"1.0.0"}];
     
     NSHttpConfiguration *configuration = [[NSHttpConfiguration alloc]init];
     configuration.animated = YES;
     configuration.animateView = self.view;
     NSHttpRequest *request = [[NSHttpRequest alloc]initWithConfiguration:configuration];
-    request.type = NSRequestGET;
+    request.type = NSRequestPOST;
 //    request.requestParams = @{@"data":@""};
     request.urlPath = @"/api/nova-shop/admin/shop/register-phone/verify-code";
     request.completion = ^(id responseObject, NSError *error) {
@@ -55,18 +54,6 @@
     [[NSApi shareInstance] sendReq:request];
 }
 
-
-- (void)testSign
-{
-//    NSString *signtime = @"1501044346";
-    NSString *clientid = @"msubxgez";
-    NSString *secret = @"3dhx34sm7ryr6x22lvsj";
-    NSString *urlpath = @"/nova-shop/admin/shop/register-phone/verify-code";
-    Prism_IOS *prism = [[Prism_IOS alloc]initWithAppKey:clientid appSecret:secret];
-    NSDictionary *sign = [prism assembleParams:nil headers:nil urlPath:urlpath httpRequestType:1];
-    NSLog(@" 签名:%@ ",sign);
-    
-}
 
 
 
