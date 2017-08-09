@@ -208,7 +208,6 @@ static NSURL *_hostURL = nil;
         _httpSessionManager.securityPolicy = policy;
         
         // 设置超时时间 10s
-        _httpSessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
         _httpSessionManager.requestSerializer.timeoutInterval = 10.f;
         
         // 添加header信息
