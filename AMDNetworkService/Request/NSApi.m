@@ -22,8 +22,9 @@ static NSURL *_hostURL = nil;
 
 @interface NSApi()
 {
-    NSDNSPod *_dnsPod;              //dns解析类
-    NSDictionary *_userAgentDict;   //用户
+    __block NSDNSPod *_dnsPod;              //dns解析类
+    __block NSDictionary *_userAgentDict;   //用户
+    __block void (^_promptCompletion)(id response);
 }
 // 请求类
 @property(nonatomic, strong) AFHTTPSessionManager *httpSessionManager;
@@ -37,6 +38,8 @@ static NSURL *_hostURL = nil;
     _dnsPod = nil;
     self.httpSessionManager = nil;
 //    self.prismIOS = nil;
+    _promptCompletion = nil;
+    _userAgentDict = nil;
 }
 
 
@@ -64,25 +67,20 @@ static NSURL *_hostURL = nil;
     __weak typeof(self) weakself = self;
     __block void (^completion)(id _Nonnull responseObject, NSError * _Nullable error)
     = ^(id _Nonnull responseObject, NSError * _Nonnull error){
-        // prism错误提示语
-        NSError *aerror = error;
-        if ([responseObject isKindOfClass:[NSDictionary class]]) {
-            if ([responseObject[@"result"] isEqualToString:@"error"]) {
-                NSDictionary *error = responseObject[@"error"];
-//                NSInteger code = [error[@"code"] integerValue];
-//                NSString *errordes = [weakself prismErrorFromCode:code];
-                NSString *errordes = error[@"message"];
-                aerror = [[NSError alloc]initWithDomain:NSURLErrorDomain code:0 userInfo:@{NSLocalizedDescriptionKey:errordes}];
-            }
-        }
+        // 错误提示语
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            // 错误提示
+            if(_promptCompletion) {
+                _promptCompletion(responseObject);
+            }
+            
             // 关闭动画
             #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
             [req performSelector:NSSelectorFromString(@"end") withObject:nil];
             
             if (req.completion) {
-                req.completion(responseObject, aerror);
+                req.completion(responseObject, error);
             }
         });
     };
@@ -115,6 +113,14 @@ static NSURL *_hostURL = nil;
     NSApi *api = [NSApi shareInstance];
     api->_userAgentDict = userAgent;
 }
+
+// 提示框
++ (void)registerPrompt:(void (^)(id response))prompt
+{
+    NSApi *api = [NSApi shareInstance];
+    api->_promptCompletion = prompt;
+}
+
 
 
 #pragma mark - private api
@@ -202,9 +208,9 @@ static NSURL *_hostURL = nil;
         _httpSessionManager = [AFHTTPSessionManager manager];
         AFSecurityPolicy* policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
         // 验证域名
-        [policy setValidatesDomainName:NO];
+        [policy setValidatesDomainName:YES];
         // 允许无效证书
-        [policy setAllowInvalidCertificates:YES];
+        [policy setAllowInvalidCertificates:NO];
         _httpSessionManager.securityPolicy = policy;
         
         // 设置超时时间 10s

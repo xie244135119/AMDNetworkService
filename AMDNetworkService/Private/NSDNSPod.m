@@ -28,7 +28,7 @@ NSString *const kAMDServerLastHostIP = @"AMDServerLastHostIP";           //å·²ç»
 - (NSString *)hostIPWithUrlStr:(NSString *)urlstr
 {
     NSURLComponents *components = [[NSURLComponents alloc]initWithString:urlstr];
-    components.host = [self ipFromHost:components.host];
+//    components.host = [self ipFromHost:components.host];
     return components.URL.description;
 }
 

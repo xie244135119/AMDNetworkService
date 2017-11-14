@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self test2];
+//    [self test];
 //    [self testSign];
 }
 
@@ -29,12 +29,18 @@
 }
 
 
+-(IBAction)clickTest:(id)sender
+{
+    [self test];
+}
+
 
 - (void)test
 {
-    [NSApi registerHostUrl:[NSURL URLWithString:@"http://openapi.sandbox.wdwd.com"]];
+    [NSApi registerHostUrl:[NSURL URLWithString:@"https://openapi.wdwd.com"]];
 //    [NSApi registerPrismKey:@"msubxgez" secret:@"3dhx34sm7ryr6x22lvsj"];
     [NSApi registerUserAgent:@{@"wdwd": @"1.0.0"}];
+//    [NSApi registerHostUrl:[NSURL URLWithString:@"https://openapi.you.163.com/channel/api.json"]];
     
     NSHttpConfiguration *configuration = [[NSHttpConfiguration alloc]init];
     configuration.animated = YES;
@@ -59,7 +65,7 @@
 {
     // http://www.sojson.com/open/api/weather/json.shtml?city=北京
     
-    [NSApi registerHostUrl:[NSURL URLWithString:@"http://www.sojson.com"]];
+    [NSApi registerHostUrl:[NSURL URLWithString:@"https://www.sojson.com"]];
     //    [NSApi registerPrismKey:@"msubxgez" secret:@"3dhx34sm7ryr6x22lvsj"];
     [NSApi registerUserAgent:@{@"wdwd": @"1.0.0"}];
     

@@ -37,6 +37,13 @@
  */
 + (void)registerUserAgent:(NSDictionary *)userAgent;
 
+/**
+ 注册统一提示语
+
+ @param prompt 提示语
+ */
++ (void)registerPrompt:(void (^)(id response))prompt;
+
 
 /**
  注册统一请求前缀<只需注册一次>
